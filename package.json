@@ -17,7 +17,9 @@
     "lint": "eslint src *.js",
     "deploy": "npm run build:dist && surge -p .",
     "start": "node server.js",
-    "test": "jest --verbose"
+    "test": "jest --verbose",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "author": "",
   "license": "MIT",
@@ -35,7 +37,8 @@
     "react-typography": "^0.16.5",
     "redux": "^3.0.4",
     "redux-actions": "^2.0.3",
-    "victory-core": "^15.2.0"
+    "victory-core": "^15.2.0",
+    "snyk": "^1.46.0"
   },
   "peerDependencies": {
     "prop-types": "^15.6.0",
@@ -102,5 +105,6 @@
       "raf/polyfill",
       "<rootDir>/jest-setup.js"
     ]
-  }
+  },
+  "snyk": true
 }
